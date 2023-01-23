@@ -1,0 +1,15 @@
+D:\AI\myproject\bin\Debug\net7.0\myproject.exe
+D:\AI\myproject\bin\Debug\net7.0\myproject.deps.json
+D:\AI\myproject\bin\Debug\net7.0\myproject.runtimeconfig.json
+D:\AI\myproject\bin\Debug\net7.0\myproject.dll
+D:\AI\myproject\bin\Debug\net7.0\myproject.pdb
+D:\AI\myproject\obj\Debug\net7.0\myproject.csproj.AssemblyReference.cache
+D:\AI\myproject\obj\Debug\net7.0\myproject.GeneratedMSBuildEditorConfig.editorconfig
+D:\AI\myproject\obj\Debug\net7.0\myproject.AssemblyInfoInputs.cache
+D:\AI\myproject\obj\Debug\net7.0\myproject.AssemblyInfo.cs
+D:\AI\myproject\obj\Debug\net7.0\myproject.csproj.CoreCompileInputs.cache
+D:\AI\myproject\obj\Debug\net7.0\myproject.dll
+D:\AI\myproject\obj\Debug\net7.0\refint\myproject.dll
+D:\AI\myproject\obj\Debug\net7.0\myproject.pdb
+D:\AI\myproject\obj\Debug\net7.0\myproject.genruntimeconfig.cache
+D:\AI\myproject\obj\Debug\net7.0\ref\myproject.dll
