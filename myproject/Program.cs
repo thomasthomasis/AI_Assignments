@@ -23,6 +23,7 @@ namespace HelloWorld
 
         static float[] CalculateAverageFitness(string[] population, int numberOfGenerations, int populationSize, int mutationRate)
         {
+            //test
             float[] averageFitness = new float[numberOfGenerations];
 
             string[] newPopulation = population;
