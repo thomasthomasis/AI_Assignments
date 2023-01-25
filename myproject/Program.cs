@@ -7,9 +7,9 @@ namespace HelloWorld
     {         
         static void Main(string[] args)
         {
-            int populationSize = 5;
+            int populationSize = 100;
             int stringLength = 30;
-            int numberOfGenerations = 100;
+            int numberOfGenerations = 50;
             int mutationRate = 1;
 
             string[] population = GeneratePopulation(populationSize, stringLength);
@@ -17,7 +17,7 @@ namespace HelloWorld
             float[] averageFitness = CalculateAverageFitness(population, numberOfGenerations, populationSize, mutationRate);
             for(int i = 0; i < averageFitness.Length; i++)
             {
-                Console.WriteLine(averageFitness[i]);
+                Console.Write(averageFitness[i] + ", ");
             }
         }
 
@@ -29,7 +29,8 @@ namespace HelloWorld
 
             for(int i = 0; i < numberOfGenerations; i++)
             {
-                int[] fitness = EvaluateFitness(newPopulation);
+                //int[] fitness = EvaluateFitnessOneMax(newPopulation);
+                int[] fitness = EvaluateFitnessMatchingPairs(newPopulation);
                 
                 float totalFitness = 0;
                 for(int j = 0; j < fitness.Length; j++)
@@ -45,8 +46,12 @@ namespace HelloWorld
                 {
                     newPopulation[j] = Breed(parents, mutationRate);
                 }
+
+                Console.WriteLine(newPopulation[0]);
             }
 
+            
+            
             return averageFitness;
         }
 
@@ -68,7 +73,7 @@ namespace HelloWorld
             return population;
         }
 
-        static int[] EvaluateFitness(string[] population)
+        static int[] EvaluateFitnessOneMax(string[] population)
         {
             int[] fitness = new int[population.Length];
 
@@ -86,6 +91,28 @@ namespace HelloWorld
 
             return fitness;
         }
+
+        static int[] EvaluateFitnessMatchingPairs(string[] population)
+        {
+            string target = "101010101010101010101010101010";
+            int[] fitness = new int[population.Length];
+
+            for(int i = 0; i < population.Length; i++)
+            {
+                for(int j = 0; j < population[0].Length; j++)
+                {
+                    if(population[i][j] == target[j])
+                    {
+                        fitness[i]++;
+                    }
+                }
+                
+            }
+
+            return fitness;
+        }
+
+
 
         static string[] SelectParents(string[] population, int[] fitness)
         {
@@ -150,7 +177,7 @@ namespace HelloWorld
                     child.Append(parentTwo[i]);
                 }
                 
-                if(rnd.Next(100) < mutationRate)
+                if(rnd.Next(1000) < mutationRate)
                 {
                     child[i] = '1';
                 }
