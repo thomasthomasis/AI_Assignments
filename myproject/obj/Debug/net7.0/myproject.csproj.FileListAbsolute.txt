@@ -28,3 +28,18 @@ C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\obj\Debug\net7.0\refint\m
 C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.pdb
 C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.genruntimeconfig.cache
 C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\obj\Debug\net7.0\ref\myproject.dll
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.csproj.AssemblyReference.cache
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.GeneratedMSBuildEditorConfig.editorconfig
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.AssemblyInfoInputs.cache
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.AssemblyInfo.cs
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.csproj.CoreCompileInputs.cache
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.dll
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\refint\myproject.dll
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.pdb
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.exe
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.deps.json
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.runtimeconfig.json
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.dll
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.pdb
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.genruntimeconfig.cache
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\ref\myproject.dll

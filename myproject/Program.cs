@@ -30,7 +30,8 @@ namespace HelloWorld
             for(int i = 0; i < numberOfGenerations; i++)
             {
                 //int[] fitness = EvaluateFitnessOneMax(newPopulation);
-                int[] fitness = EvaluateFitnessMatchingPairs(newPopulation);
+                //int[] fitness = EvaluateFitnessMatchingPairs(newPopulation);
+                int[] fitness = EvaluateFitnessDeceptiveLandscape(newPopulation);
                 
                 float totalFitness = 0;
                 for(int j = 0; j < fitness.Length; j++)
@@ -107,6 +108,29 @@ namespace HelloWorld
                     }
                 }
                 
+            }
+
+            return fitness;
+        }
+
+        static int[] EvaluateFitnessDeceptiveLandscape(string[] population)
+        {
+            int[] fitness = new int[population.Length];
+
+            for(int i = 0; i < population.Length; i++)
+            {
+                for(int j = 0; j < population[0].Length; j++)
+                {
+                    if(population[i][j] == '1')
+                    {
+                        fitness[i]++;
+                    }
+                }
+                
+                if(fitness[i] == 0)
+                {
+                    fitness[i] = 2 * population[0].Length;
+                }
             }
 
             return fitness;
