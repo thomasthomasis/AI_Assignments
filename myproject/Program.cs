@@ -31,7 +31,8 @@ namespace HelloWorld
             {
                 //int[] fitness = EvaluateFitnessOneMax(newPopulation);
                 //int[] fitness = EvaluateFitnessMatchingPairs(newPopulation);
-                int[] fitness = EvaluateFitnessDeceptiveLandscape(newPopulation);
+                //int[] fitness = EvaluateFitnessDeceptiveLandscape(newPopulation);
+                int[] fitness = EvaluateFitnessLargerAlphabet(newPopulation);
                 
                 float totalFitness = 0;
                 for(int j = 0; j < fitness.Length; j++)
@@ -45,7 +46,8 @@ namespace HelloWorld
                 Array.Clear(newPopulation, 0, newPopulation.Length);
                 for(int j = 0; j < populationSize; j++)
                 {
-                    newPopulation[j] = Breed(parents, mutationRate);
+                    //newPopulation[j] = Breed(parents, mutationRate);
+                    newPopulation[j] = BreedLargerAlphabet(parents, mutationRate);
                 }
 
                 Console.WriteLine(newPopulation[0]);
@@ -136,6 +138,26 @@ namespace HelloWorld
             return fitness;
         }
 
+        static int[] EvaluateFitnessLargerAlphabet(string[] population)
+        {
+            string target = "0123456789";
+            int[] fitness = new int[population.Length];
+
+            for(int i = 0; i < population.Length; i++)
+            {
+                for(int j = 0; j < target.Length; j++)
+                {
+                    if(population[i][j] == target[j])
+                    {
+                        fitness[i]++;
+                    }
+                }
+                
+            }
+
+            return fitness;
+        }
+
 
 
         static string[] SelectParents(string[] population, int[] fitness)
@@ -204,6 +226,39 @@ namespace HelloWorld
                 if(rnd.Next(1000) < mutationRate)
                 {
                     child[i] = '1';
+                }
+            }
+
+            return child.ToString();
+        }
+
+        static string BreedLargerAlphabet(string[] parents, int mutationRate)
+        {
+            string target = "0123456789";
+
+            string parentOne = parents[0];
+            string parentTwo = parents[1];
+
+            Random rnd = new Random();
+            int crossoverPoint = rnd.Next(parents[0].Length);
+
+            StringBuilder child = new StringBuilder(parents[0].Length);
+            
+            for(int i = 0; i < target.Length; i++)
+            {
+                if(i < crossoverPoint)
+                {
+
+                    child.Append(parentOne[i]);
+                }
+                else
+                {
+                    child.Append(parentTwo[i]);
+                }
+                
+                if(rnd.Next(1000) < mutationRate)
+                {
+                    child[i] = target[i];
                 }
             }
 
