@@ -34,6 +34,12 @@ namespace PartB
             students.Add("student4");
             students.Add("student5");
 
+            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
+            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
+            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
+            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
+            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
+
             preferences.Add(new int[] = {1, 2, 3, 4, 5});
 
 
