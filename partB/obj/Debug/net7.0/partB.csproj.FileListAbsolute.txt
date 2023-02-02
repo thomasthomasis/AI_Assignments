@@ -1,0 +1,15 @@
+D:\The God Folder\Github\AI_Assignments\partB\bin\Debug\net7.0\partB.exe
+D:\The God Folder\Github\AI_Assignments\partB\bin\Debug\net7.0\partB.deps.json
+D:\The God Folder\Github\AI_Assignments\partB\bin\Debug\net7.0\partB.runtimeconfig.json
+D:\The God Folder\Github\AI_Assignments\partB\bin\Debug\net7.0\partB.dll
+D:\The God Folder\Github\AI_Assignments\partB\bin\Debug\net7.0\partB.pdb
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\partB.csproj.AssemblyReference.cache
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\partB.GeneratedMSBuildEditorConfig.editorconfig
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\partB.AssemblyInfoInputs.cache
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\partB.AssemblyInfo.cs
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\partB.csproj.CoreCompileInputs.cache
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\partB.dll
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\refint\partB.dll
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\partB.pdb
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\partB.genruntimeconfig.cache
+D:\The God Folder\Github\AI_Assignments\partB\obj\Debug\net7.0\ref\partB.dll
