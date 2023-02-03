@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Collections;
 
 // Hello World! program
@@ -11,38 +12,79 @@ namespace PartB
     {         
         static void Main(string[] args)
         {
-            ArrayList lecturers = new ArrayList();
+
             ArrayList students = new ArrayList();
-            ArrayList capacities = new ArrayList();
             ArrayList preferences = new ArrayList();
+            
+            using(StreamReader reader = new StreamReader("Student-choices.csv"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
 
-            lecturers.Add("lecturer1");
-            lecturers.Add("lecturer2");
-            lecturers.Add("lecturer3");
-            lecturers.Add("lecturer4");
-            lecturers.Add("lecturer5");
+                    students.Add(values[0]);
 
-            capacities.Add(1);
-            capacities.Add(1);
-            capacities.Add(1);
-            capacities.Add(1);
-            capacities.Add(1);
+                    String studentPreferences = "";
+                    for(int i = 1; i < values.Length; i++)
+                    {
+                        if(i == values.Length - 1)
+                        {
+                            studentPreferences += values[i];
+                        }
+                        else
+                        {
+                            studentPreferences += values[i] + ","; 
+                        }
+                    
+                        
+                    }
 
-            students.Add("student1");
-            students.Add("student2");
-            students.Add("student3");
-            students.Add("student4");
-            students.Add("student5");
+                    preferences.Add(studentPreferences);
+                    
+                }
+            }
 
-            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
-            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
-            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
-            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
-            string[] arr1 = {"lecturer1", "lecturer2", "lecturer3", "lecturer4", "lecturer5"};
+            ArrayList supervisors = new ArrayList();
+            ArrayList capacities = new ArrayList();
 
-            preferences.Add(new int[] = {1, 2, 3, 4, 5});
+            using(StreamReader reader = new StreamReader("Supervisors.csv"))
+            {
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+
+                    supervisors.Add(values[0]);
+                    capacities.Add(values[1]);
+                }
+            }
+            
+            
+            ArrayList initialPopulation = GeneratePopulation(students, preferences, supervisors, capacities);
+            
 
 
+        }
+
+        static ArrayList GeneratePopulation(ArrayList students, ArrayList preferences, ArrayList supervisors, ArrayList capacities)
+        {
+            ArrayList population = new ArrayList();
+
+            for(int i = 0; i < students.Count; i++)
+            {
+                String preferencesString = preferences[i] as String;
+
+                String[] values = preferencesString.Split(',');
+                Random rnd = new Random();
+                int randomNumber = rnd.Next(values.Length);
+
+                int randomChoice = int.Parse(values[randomNumber]);
+                Console.WriteLine(randomChoice);
+            }
+
+
+            return population;
         }
 
     }
