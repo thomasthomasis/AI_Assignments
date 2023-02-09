@@ -2,7 +2,6 @@
 namespace HelloWorld
 {
     using System.Text;
-    using Plotly.NET;
 
     class Hello 
     {         
@@ -228,7 +227,14 @@ namespace HelloWorld
                 
                 if(rnd.Next(1000) < mutationRate) //if we generate a number which is less than our mutation rate number, mutate the character to 1
                 {
-                    child[i] = '1';
+                    if(child[i] == '1')
+                    {
+                        child[i] == '0';
+                    }
+                    else 
+                    {
+                        child[i] = '1';
+                    }
                 }
             }
 
