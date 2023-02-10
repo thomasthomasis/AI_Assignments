@@ -28,3 +28,36 @@ C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\obj\Debug\net7.0\refint\m
 C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.pdb
 C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.genruntimeconfig.cache
 C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\obj\Debug\net7.0\ref\myproject.dll
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.csproj.AssemblyReference.cache
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.GeneratedMSBuildEditorConfig.editorconfig
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.AssemblyInfoInputs.cache
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.AssemblyInfo.cs
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.csproj.CoreCompileInputs.cache
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.dll
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\refint\myproject.dll
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.pdb
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.exe
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.deps.json
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.runtimeconfig.json
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.dll
+D:\The God Folder\Github\AI_Assignments\myproject\bin\Debug\net7.0\myproject.pdb
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.genruntimeconfig.cache
+D:\The God Folder\Github\AI_Assignments\myproject\obj\Debug\net7.0\ref\myproject.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\DynamicObj.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\FSharp.Core.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\Plotly.NET.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\cs\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\de\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\es\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\fr\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\it\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\ja\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\ko\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\pl\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\pt-BR\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\ru\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\tr\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\zh-Hans\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\bin\Debug\net7.0\zh-Hant\FSharp.Core.resources.dll
+C:\Users\thoma\Desktop\Github\AI_Assignments\myproject\obj\Debug\net7.0\myproject.csproj.CopyComplete
