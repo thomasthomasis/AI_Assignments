@@ -12,8 +12,8 @@ namespace PartB
     {         
         static void Main(string[] args)
         {
-            int populationSize = 3; //number of strings in each generation
-            int numberOfGenerations = 3; //number of generations
+            int populationSize = 100; //number of strings in each generation
+            int numberOfGenerations = 100; //number of generations
             int mutationRate = 1; //how often a character in a string will mutate (1/100)
 
             List<String> students = new List<String>();
@@ -105,9 +105,22 @@ namespace PartB
                 newPopulation.Clear();
                 for(int j = 0; j < populationSize; j++)
                 {
-                    Console.WriteLine("Child " + (j + 1));
+                    //Console.WriteLine("Child " + (j + 1));
                     newPopulation.Add(Breed(parents, mutationRate, preferences, capacities));
                 }
+
+                /*
+                for(int j = 0; j < newPopulation.Count; j++)
+                {
+                    Console.WriteLine("Member " + (j+1));
+                    for(int k = 0; k < newPopulation[j].Count; k++)
+                    {
+                        Console.Write("Student: " + newPopulation[j][k][0] + " | ");
+                        Console.Write("Supervisor: " + newPopulation[j][k][1] + "");
+                        Console.WriteLine();
+                    }
+                }
+                */
             }
             
             return averageFitness;
@@ -264,6 +277,7 @@ namespace PartB
             
             List<int> newCapacities = new List<int>();
 
+            /*
             Console.WriteLine("Before");
             for(int i = 0; i < capacities.Count; i++)
             {
@@ -271,35 +285,55 @@ namespace PartB
                 Console.Write(newCapacities[i] + "|");
             }
             Console.WriteLine();
+            */
             
-            for(int i = 0; i < child.Count; i++)
+            for(int i = 0; i < newCapacities.Count; i++)
             {
-                newCapacities[child[i][1]-1]--;
-                
+                for(int j = 0; j < child.Count; j++)
+                {
+                    if(child[j][1] == (i + 1))
+                    {
+                        newCapacities[i]--;
+                    }
+                }
             }
+            
+            /*
             Console.WriteLine("During");
             for(int j = 0; j < newCapacities.Count; j++)
                 {
                     Console.Write(newCapacities[j] + "|");
                 }
-                Console.WriteLine();
+            Console.WriteLine();
+            */
 
             for(int i = 0; i < newCapacities.Count; i++)
             {
-                Console.WriteLine("not bigger " + newCapacities[i]);
-                if(newCapacities[i] > 0)
+                if(newCapacities[i] == 0)
                 {
-                    Console.WriteLine("bigger");
-                    for(int k = 0; k < newCapacities[i]; k++)
+                    //Console.WriteLine("Given Out Enough " + newCapacities[i]);
+                }
+
+                else if(newCapacities[i] > 0)
+                {
+                    //Console.WriteLine("Not Given Out Enough " + newCapacities[i]);
+                }
+                
+                else if(newCapacities[i] < 0)
+                {
+                    //Console.WriteLine("Given Out Too Much " + newCapacities[i]);
+                    int amount = (newCapacities[i] * -1);
+
+                    for(int k = 0; k < amount; k++)
                     {
-                        Console.WriteLine("Reducing " + (k + 1));
+                        //Console.WriteLine("Reducing " + (k + 1));
                         for(int j = 0; j < child.Count; j++)
                         {
                             if(child[j][1] == (i + 1))
                             {
-                                Console.WriteLine("Reduced ");
-                                newCapacities[i]--;
+                                //Console.WriteLine("Reduced ");
                                 child[j][1] = 0;
+                                newCapacities[i]++;
                                 break;
                             }
                         }
@@ -308,24 +342,26 @@ namespace PartB
                 }
             }
 
-            Console.WriteLine("After");
+            /*
+            Console.WriteLine("After Reducing Under Zero");
 
             for(int j = 0; j < newCapacities.Count; j++)
             {
                 Console.Write(newCapacities[j] + "|");
             }
             Console.WriteLine();
+            */
 
             for(int i = 0; i < newCapacities.Count; i++)
             {
-                if(newCapacities[i] < 0)
+                if(newCapacities[i] > 0)
                 {
                     for(int j = 0; j < child.Count; j++)
                     {
                         if(child[j][1] == 0)
                         {
                             child[j][1] = (i + 1);
-                            newCapacities[i]++;
+                            newCapacities[i]--;
                             if(newCapacities[i] == 0)
                             {
                                 break;
@@ -334,26 +370,34 @@ namespace PartB
                     }
                 }
             }
+            
 
-            Console.WriteLine("After");
+            /*
+            Console.WriteLine("After Reducing Over Zero");
 
             for(int j = 0; j < newCapacities.Count; j++)
             {
                 Console.Write(newCapacities[j] + "|");
             }
             Console.WriteLine();
+            */
 
             for(int i = 0; i < numMutations; i++)
             {
                 List<int> currentStudentPreferences = new List<int>();
-                var values = preferences[child[i][0]].Split(',');
+
+                int randomChoice = rnd.Next(child.Count);
+
+                int selectedStudent = (child[randomChoice][0] - 1);
+
+                var values = preferences[selectedStudent].Split(',');
 
                 for(int j = 0; j < values.Length; j++)
                 {
                     currentStudentPreferences.Add(int.Parse(values[j]));
                 }
 
-                int previousSupervisor = child[i][1];
+                int previousSupervisor = child[randomChoice][1];
 
                 int previousSupervisorIndex = 0;
 
@@ -381,6 +425,7 @@ namespace PartB
                 }
             }
 
+            /*
             Console.WriteLine("After Mutation");
 
             for(int j = 0; j < newCapacities.Count; j++)
@@ -388,6 +433,7 @@ namespace PartB
                 Console.Write(newCapacities[j] + "|");
             }
             Console.WriteLine();
+            */
 
             return child;
         }
