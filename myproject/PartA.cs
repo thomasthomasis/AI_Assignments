@@ -229,7 +229,7 @@ namespace HelloWorld
                 {
                     if(child[i] == '1')
                     {
-                        child[i] == '0';
+                        child[i] = '0';
                     }
                     else 
                     {

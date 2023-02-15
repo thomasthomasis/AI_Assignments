@@ -225,11 +225,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thoma\\Desktop\\Github\\AI_Assignments\\myproject\\myproject.csproj",
+      "projectUniqueName": "C:\\Users\\thoma\\Desktop\\Github\\AI_ACTUAL\\AI_Assignments\\myproject\\myproject.csproj",
       "projectName": "myproject",
-      "projectPath": "C:\\Users\\thoma\\Desktop\\Github\\AI_Assignments\\myproject\\myproject.csproj",
+      "projectPath": "C:\\Users\\thoma\\Desktop\\Github\\AI_ACTUAL\\AI_Assignments\\myproject\\myproject.csproj",
       "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thoma\\Desktop\\Github\\AI_Assignments\\myproject\\obj\\",
+      "outputPath": "C:\\Users\\thoma\\Desktop\\Github\\AI_ACTUAL\\AI_Assignments\\myproject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
