@@ -13,19 +13,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\The God Folder\\Github\\AI_Assignments\\partB\\partB.csproj",
+      "projectUniqueName": "C:\\Users\\thoma\\Desktop\\Github\\AI_ACTUAL\\AI_Assignments\\partB\\partB.csproj",
       "projectName": "partB",
-      "projectPath": "D:\\The God Folder\\Github\\AI_Assignments\\partB\\partB.csproj",
+      "projectPath": "C:\\Users\\thoma\\Desktop\\Github\\AI_ACTUAL\\AI_Assignments\\partB\\partB.csproj",
       "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "D:\\The God Folder\\Github\\AI_Assignments\\partB\\obj\\",
+      "outputPath": "C:\\Users\\thoma\\Desktop\\Github\\AI_ACTUAL\\AI_Assignments\\partB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

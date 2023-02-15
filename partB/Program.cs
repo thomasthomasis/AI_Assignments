@@ -12,7 +12,7 @@ namespace PartB
     {         
         static void Main(string[] args)
         {
-            int populationSize = 5; //number of strings in each generation
+            int populationSize = 3; //number of strings in each generation
             int numberOfGenerations = 3; //number of generations
             int mutationRate = 1; //how often a character in a string will mutate (1/100)
 
@@ -72,21 +72,6 @@ namespace PartB
                 Console.Write(averageFitness[i] + ", "); //print out each average fitness
             }
 
-            
-            /*
-            for(int i = 0; i < initialPopulation.Count; i++)
-            {
-                Console.WriteLine("Solution " + (i + 1));
-                for(int j = 0; j < initialPopulation[i].Count; j++)
-                {
-                    Console.Write("Student: " + initialPopulation[i][j][0]);
-                    Console.Write(", ");
-                    Console.Write("Supervisor: " + initialPopulation[i][j][1]);
-                    Console.WriteLine("");
-                }
-            }
-            */
-
         }
 
         static List<float> CalculateAverageFitness(List<List<int[]>> population, int numberOfGenerations, int populationSize, int mutationRate, List<String> preferences, int numSupervisors, int numStudents, List<int> capacities)
@@ -97,11 +82,13 @@ namespace PartB
 
             for(int i = 0; i < numberOfGenerations; i++)
             {
+                /*
                 Console.WriteLine("----------------");
                 Console.WriteLine("----------------");
                 Console.WriteLine("Generation " + (i + 1));
                 Console.WriteLine("----------------");
                 Console.WriteLine("----------------");
+                */
 
                 List<int> fitness = EvaluateFitness(newPopulation, preferences);
                 
@@ -118,58 +105,10 @@ namespace PartB
                 newPopulation.Clear();
                 for(int j = 0; j < populationSize; j++)
                 {
-                    newPopulation.Add(Breed(parents, mutationRate, preferences, capacities));
-                    /*
-                    if(j == populationSize - 1)
-                    {
-                        for(int m = 0; m < newPopulation.Count; m++)
-                        {
-                            Console.WriteLine("Solution " + (m + 1));
-                            for(int k = 0; k < newPopulation[m].Count; k++)
-                            {
-                                Console.Write("Student: " + newPopulation[m][k][0]);
-                                Console.Write(", ");
-                                Console.Write("Supervisor: " + newPopulation[m][k][1]);
-                                Console.WriteLine("");
-                            }
-                        }
-                    }
-                    */
-                }
-
-
-                for(int j = 0; j < 3; j++)
-                {
-                    Console.WriteLine("------------");
-                    Console.WriteLine("------------");
                     Console.WriteLine("Child " + (j + 1));
-                    Console.WriteLine("------------");
-                    Console.WriteLine("------------");
-                    for(int k = 0; k < newPopulation[j].Count; k++)
-                    {
-                        Console.Write("Student: " + newPopulation[j][k][0]);
-                        Console.Write(", ");
-                        Console.Write("Supervisor: " + newPopulation[j][k][1]);
-                        Console.WriteLine("");
-                    }
-                }
-                
-            }
-
-            /*
-            for(int m = 0; m < newPopulation.Count; m++)
-            {
-                Console.WriteLine("Solution " + (m + 1));
-                for(int k = 0; k < newPopulation[m].Count; k++)
-                {
-                    Console.Write("Student: " + newPopulation[m][k][0]);
-                    Console.Write(", ");
-                    Console.Write("Supervisor: " + newPopulation[m][k][1]);
-                    Console.WriteLine("");
+                    newPopulation.Add(Breed(parents, mutationRate, preferences, capacities));
                 }
             }
-            */
-
             
             return averageFitness;
         }
@@ -208,7 +147,6 @@ namespace PartB
                         break;
                     }
                     
-
                     currentSolution.Add(matching);
                 }
 
@@ -247,8 +185,11 @@ namespace PartB
                         if(supervisor == currentStudentPreferences[m])
                         {
                             currentFitness += m;
+                            break;
                         }
                     }
+
+                    currentStudentPreferences.Clear();
                 }
 
                 fitness.Add(currentFitness);
@@ -261,9 +202,6 @@ namespace PartB
         static List<List<int[]>> SelectParents(List<List<int[]>> population, List<int> fitness, int numSupervisors, int numStudents)
         {
             List<List<int[]>> parents = new List<List<int[]>>();
-
-            List<List<int[]>> newPopulation = new List<List<int[]>>();
-            List<int> newFitness = new List<int>();
 
             for(int i = 0; i < 2; i++)
             {
@@ -286,22 +224,7 @@ namespace PartB
 
             }
 
-            for(int m = 0; m < parents.Count; m++)
-            {
-                Console.WriteLine("Solution " + (m + 1));
-                for(int k = 0; k < parents[m].Count; k++)
-                {
-                    Console.Write("Student: " + parents[m][k][0]);
-                    Console.Write(", ");
-                    Console.Write("Supervisor: " + parents[m][k][1]);
-                    Console.WriteLine("");
-                }
-            }
-
             return parents;
-
-            
-
         }
 
         static List<int[]> Breed(List<List<int[]>> parents, int mutationRate, List<String> preferences, List<int> capacities) //breeding method to create new children from parents
@@ -327,41 +250,71 @@ namespace PartB
                     child.Add(parentTwo[i]);
                 }
                 
-                if(rnd.Next(100) < mutationRate) //if we generate a number which is less than our mutation rate number, mutate the character to 1
+                if(rnd.Next(1000) < mutationRate) //if we generate a number which is less than our mutation rate number, mutate the character to 1
                 {
                     numMutations++;
                 }
+
+                //Console.Write(child[i][1] + "|");
             }
+
+            //Console.WriteLine();
+
+
             
             List<int> newCapacities = new List<int>();
+
+            Console.WriteLine("Before");
             for(int i = 0; i < capacities.Count; i++)
             {
                 newCapacities.Add(capacities[i]);
+                Console.Write(newCapacities[i] + "|");
             }
+            Console.WriteLine();
             
             for(int i = 0; i < child.Count; i++)
             {
                 newCapacities[child[i][1]-1]--;
+                
             }
+            Console.WriteLine("During");
+            for(int j = 0; j < newCapacities.Count; j++)
+                {
+                    Console.Write(newCapacities[j] + "|");
+                }
+                Console.WriteLine();
 
             for(int i = 0; i < newCapacities.Count; i++)
             {
+                Console.WriteLine("not bigger " + newCapacities[i]);
                 if(newCapacities[i] > 0)
                 {
-                    for(int j = 0; j < child.Count; j++)
+                    Console.WriteLine("bigger");
+                    for(int k = 0; k < newCapacities[i]; k++)
                     {
-                        if(child[j][1] == (i+1))
+                        Console.WriteLine("Reducing " + (k + 1));
+                        for(int j = 0; j < child.Count; j++)
                         {
-                            child[j][1] = 0;
-                            newCapacities[i]--;
-                            if(newCapacities[i] == 0)
+                            if(child[j][1] == (i + 1))
                             {
+                                Console.WriteLine("Reduced ");
+                                newCapacities[i]--;
+                                child[j][1] = 0;
                                 break;
                             }
                         }
                     }
+                    
                 }
             }
+
+            Console.WriteLine("After");
+
+            for(int j = 0; j < newCapacities.Count; j++)
+            {
+                Console.Write(newCapacities[j] + "|");
+            }
+            Console.WriteLine();
 
             for(int i = 0; i < newCapacities.Count; i++)
             {
@@ -381,6 +334,14 @@ namespace PartB
                     }
                 }
             }
+
+            Console.WriteLine("After");
+
+            for(int j = 0; j < newCapacities.Count; j++)
+            {
+                Console.Write(newCapacities[j] + "|");
+            }
+            Console.WriteLine();
 
             for(int i = 0; i < numMutations; i++)
             {
@@ -419,6 +380,14 @@ namespace PartB
                     }
                 }
             }
+
+            Console.WriteLine("After Mutation");
+
+            for(int j = 0; j < newCapacities.Count; j++)
+            {
+                Console.Write(newCapacities[j] + "|");
+            }
+            Console.WriteLine();
 
             return child;
         }
